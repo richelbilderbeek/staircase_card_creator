@@ -1,2 +1,23 @@
 # StaircaseCardCreator
-Tool to create staircase cards, written in C++ using Qt
+
+Tool to create staircase cards, written in C++ using Qt.
+
+
+```
+          |          
+  +-+---+-+-+-+-+    
+  | |   | | | | |    
+  +-+-+-+ +-+-+-+-+  
+      |     | | | |  
+  +-+-+-+ +-+-+-+-+  
+  | |   | | | | |    
+  +-+-+ +-+-+ +-+-+  
+    | |   |     | |  
+  +-+-+ +-+-+ +-+-+  
+  | |   | | | | |    
+  +-+-+ +-+-+ +-+-+  
+    | |   |     | |  
+    +-+---+-----+-+  
+          |          
+                     
+```

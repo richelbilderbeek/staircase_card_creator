@@ -36,7 +36,6 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 #include <QImage>
 
 #include "fileio.h"
-#include "richelbilderbeekprogram.h"
 #include "staircasecard.h"
 #include "textcanvas.h"
 #include "testtimer.h"
@@ -95,16 +94,9 @@ ribi::Help ribi::scc::MenuDialog::GetHelp() const noexcept
   );
 }
 
-boost::shared_ptr<const ribi::Program> ribi::scc::MenuDialog::GetProgram() const noexcept
-{
-  const boost::shared_ptr<const ribi::Program> p(new ProgramStaircaseCardCreator);
-  assert(p);
-  return p;
-}
-
 std::string ribi::scc::MenuDialog::GetVersion() const noexcept
 {
-  return "1.2";
+  return "2.0";
 }
 
 std::vector<std::string> ribi::scc::MenuDialog::GetVersionHistory() const noexcept
@@ -112,7 +104,8 @@ std::vector<std::string> ribi::scc::MenuDialog::GetVersionHistory() const noexce
   const std::vector<std::string> v {
     "2010-xx-xx: version 1.0: initial version",
     "2014-02-26: version 1.1: first versioning",
-    "2014-03-06: version 1.2: added aesthetic functions"
+    "2014-03-06: version 1.2: added aesthetic functions",
+    "2015-11-23: version 2.0: moved to own GitHub",
   };
   return v;
 }

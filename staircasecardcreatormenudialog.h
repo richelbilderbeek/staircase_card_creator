@@ -25,7 +25,6 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 #include <vector>
 
 #include "menudialog.h"
-//#include "staircasecardcreatorfwd.h"
 
 namespace ribi {
 namespace scc {
@@ -37,7 +36,6 @@ struct MenuDialog final : public ::ribi::MenuDialog
   ~MenuDialog() noexcept {}
   About GetAbout() const noexcept override;
   Help GetHelp() const noexcept override;
-  boost::shared_ptr<const Program> GetProgram() const noexcept override;
   std::string GetVersion() const noexcept override;
 
   std::vector<std::string> GetVersionHistory() const noexcept override;

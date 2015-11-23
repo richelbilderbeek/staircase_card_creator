@@ -1,5 +1,5 @@
 <RCC>
     <qresource prefix="/images">
-        <file>ToolStaircaseCardCreatorR.png</file>
+        <file>StaircaseCardCreatorR.png</file>
     </qresource>
 </RCC>

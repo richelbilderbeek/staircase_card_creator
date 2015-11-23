@@ -23,7 +23,7 @@
    <string>StaircaseCardCreator</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="ToolStaircaseCardCreator.qrc">
+   <iconset>
     <normaloff>:/images/ToolStaircaseCardCreatorR.png</normaloff>:/images/ToolStaircaseCardCreatorR.png</iconset>
   </property>
   <property name="styleSheet">
@@ -41,8 +41,6 @@ QPlainTextEdit { font: 10px }
   <layout class="QGridLayout" name="gridLayout_2"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources>
-  <include location="ToolStaircaseCardCreator.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>
