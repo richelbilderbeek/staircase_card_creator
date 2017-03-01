@@ -1,17 +1,16 @@
-INCLUDEPATH += \
-    ../StaircaseCardCreator
+INCLUDEPATH += $$PWD
 
 SOURCES += \
-    ../StaircaseCardCreator/staircasecardcreatormenudialog.cpp \
-    ../StaircaseCardCreator/staircasecard.cpp \
-    ../StaircaseCardCreator/staircasecardcolumn.cpp \
-    ../StaircaseCardCreator/staircasecardorientation.cpp
+    $$PWD/staircasecardcreatormenudialog.cpp \
+    $$PWD/staircasecard.cpp \
+    $$PWD/staircasecardcolumn.cpp \
+    $$PWD/staircasecardorientation.cpp
 
 HEADERS += \
-    ../StaircaseCardCreator/staircasecardcreatormenudialog.h \
-    ../StaircaseCardCreator/staircasecard.h \
-    ../StaircaseCardCreator/staircasecardcolumn.h \
-    ../StaircaseCardCreator/staircasecardorientation.h
+    $$PWD/staircasecardcreatormenudialog.h \
+    $$PWD/staircasecard.h \
+    $$PWD/staircasecardcolumn.h \
+    $$PWD/staircasecardorientation.h
 
 RESOURCES += \
-    ../StaircaseCardCreator/StaircaseCardCreator.qrc
+    $$PWD/StaircaseCardCreator.qrc

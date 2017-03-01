@@ -1,14 +1,14 @@
-include(../StaircaseCardCreator/StaircaseCardCreatorConsole.pri)
+include(StaircaseCardCreatorConsole.pri)
 
 SOURCES += \
-    ../StaircaseCardCreator/qtstaircasecardcreatormaindialog.cpp \
-    ../StaircaseCardCreator/qtstaircasecardcreatormenudialog.cpp
+    $$PWD/qtstaircasecardcreatormaindialog.cpp \
+    $$PWD/qtstaircasecardcreatormenudialog.cpp
 
 HEADERS += \
-    ../StaircaseCardCreator/qtstaircasecardcreatormaindialog.h \
-    ../StaircaseCardCreator/qtstaircasecardcreatormenudialog.h
+    $$PWD/qtstaircasecardcreatormaindialog.h \
+    $$PWD/qtstaircasecardcreatormenudialog.h
 
 FORMS += \
-    ../StaircaseCardCreator/qtstaircasecardcreatormaindialog.ui \
-    ../StaircaseCardCreator/qtstaircasecardcreatormenudialog.ui
+    $$PWD/qtstaircasecardcreatormaindialog.ui \
+    $$PWD/qtstaircasecardcreatormenudialog.ui
 

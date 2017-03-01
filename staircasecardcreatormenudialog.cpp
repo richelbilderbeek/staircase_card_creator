@@ -38,15 +38,11 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 #include "fileio.h"
 #include "staircasecard.h"
 #include "textcanvas.h"
-#include "testtimer.h"
-#include "trace.h"
 #pragma GCC diagnostic pop
 
 ribi::scc::MenuDialog::MenuDialog()
 {
-  #ifndef NDEBUG
-  Test();
-  #endif
+
 }
 
 int ribi::scc::MenuDialog::ExecuteSpecific(const std::vector<std::string>& /* argv */) noexcept
@@ -77,7 +73,6 @@ ribi::About ribi::scc::MenuDialog::GetAbout() const noexcept
     GetVersionHistory()
   };
   a.AddLibrary("FileIo version: " + fileio::FileIo().GetVersion());
-  a.AddLibrary("Trace version: " + Trace::GetVersion());
   return a;
 }
 
@@ -109,15 +104,3 @@ std::vector<std::string> ribi::scc::MenuDialog::GetVersionHistory() const noexce
   };
   return v;
 }
-
-#ifndef NDEBUG
-void ribi::scc::MenuDialog::Test() noexcept
-{
-  {
-    static bool is_tested{false};
-    if (is_tested) return;
-    is_tested = true;
-  }
-  const TestTimer test_timer(__func__,__FILE__,1.0);
-}
-#endif

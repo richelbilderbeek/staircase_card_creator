@@ -30,7 +30,6 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 #include <QImage>
 
 #include "textcanvas.h"
-#include "trace.h"
 #pragma GCC diagnostic pop
 
 ribi::scc::StaircaseCard::StaircaseCard(const int n_cols, const int n_rows)
@@ -210,7 +209,6 @@ void ribi::scc::StaircaseCard::ShuffleAesthetic() noexcept
       {
         n = new_n;
         i = 0;
-        TRACE(n);
       }
       else
       {
