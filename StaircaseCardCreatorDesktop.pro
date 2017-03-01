@@ -56,7 +56,7 @@ CONFIG(debug, debug|release) {
 
 # Qt
 QT += core gui
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets svg
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets # svg
 
 # Fixes
 #/usr/include/boost/math/constants/constants.hpp:277: error: unable to find numeric literal operator 'operator""Q'

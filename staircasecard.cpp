@@ -220,12 +220,9 @@ void ribi::scc::StaircaseCard::ShuffleAesthetic() noexcept
 
 boost::shared_ptr<QImage> ribi::scc::StaircaseCard::ToImage() const noexcept
 {
-  const boost::shared_ptr<TextCanvas> canvas {
-    ToTextCanvas()
-  };
-  assert(canvas);
-  const int width { canvas->GetWidth() };
-  const int height { canvas->GetHeight() };
+  const TextCanvas canvas{ToTextCanvas()};
+  const int width { canvas.GetWidth() };
+  const int height { canvas.GetHeight() };
   boost::shared_ptr<QImage> image {
     new QImage(width,height,QImage::Format_ARGB32)
   };
@@ -235,7 +232,7 @@ boost::shared_ptr<QImage> ribi::scc::StaircaseCard::ToImage() const noexcept
     for (int x=0; x!=width; ++x)
     {
       image->setPixel(x,y,
-        canvas->GetChar(x,y) == ' ' ? qRgb(255,255,255) : qRgb(0,0,0)
+        canvas.GetChar(x,y) == ' ' ? qRgb(255,255,255) : qRgb(0,0,0)
       );
     }
   }
@@ -243,7 +240,7 @@ boost::shared_ptr<QImage> ribi::scc::StaircaseCard::ToImage() const noexcept
 }
 
 
-boost::shared_ptr<ribi::TextCanvas> ribi::scc::StaircaseCard::ToTextCanvas() const noexcept
+ribi::TextCanvas ribi::scc::StaircaseCard::ToTextCanvas() const noexcept
 {
   const int height { (static_cast<int>(m_v.size()) * 2) + 1 };
   assert(height > 0);
@@ -282,15 +279,13 @@ boost::shared_ptr<ribi::TextCanvas> ribi::scc::StaircaseCard::ToTextCanvas() con
 
   */
 
-  boost::shared_ptr<TextCanvas> canvas {
-    new TextCanvas(width,height)
-  };
+  TextCanvas canvas(width,height);
 
   for (int y=0; y!=height; ++y)
   {
     if (y % 2 == 0)
     {
-      //canvas->PutText(0,y,std::string(width,'-'));
+      //canvas.PutText(0,y,std::string(width,'-'));
     }
     else
     {
@@ -299,7 +294,7 @@ boost::shared_ptr<ribi::TextCanvas> ribi::scc::StaircaseCard::ToTextCanvas() con
         if (x % 2 == 0)
         {
           //Put space, unless between h and v
-          canvas->PutChar(x,y,' ');
+          canvas.PutChar(x,y,' ');
           //if (x <= 2 || x >= width - 2) continue;
           const int col { (y - 1) / 2 };
           const int row_left { (x - 2) / 2 };
@@ -314,7 +309,7 @@ boost::shared_ptr<ribi::TextCanvas> ribi::scc::StaircaseCard::ToTextCanvas() con
           assert(row_right < m_v[col].GetMax());
           if (m_v[col].GetOrientation(row_left) != m_v[col].GetOrientation(row_right))
           {
-            canvas->PutChar(x,y,'|');
+            canvas.PutChar(x,y,'|');
           }
         }
         else
@@ -328,7 +323,7 @@ boost::shared_ptr<ribi::TextCanvas> ribi::scc::StaircaseCard::ToTextCanvas() con
           assert(row >= 0);
           assert(row < m_v[col].GetMax());
           //Put h/v
-          //canvas->PutChar(
+          //canvas.PutChar(
           //  x,
           //  y,
           //  m_v[col].GetOrientation(row) == Orientation::horizontal ? 'h' : 'v'
@@ -348,7 +343,7 @@ boost::shared_ptr<ribi::TextCanvas> ribi::scc::StaircaseCard::ToTextCanvas() con
     const std::vector<int> b { ColumnToMap(m_v[y+1]) };
     for (int x=0; x!=n_rows; ++x)
     {
-      canvas->PutChar(
+      canvas.PutChar(
         (x * 2) + 1 - 0,
         (y * 2) + 1 + 1,
         a[x] == b[x] ? ' ' : '-'
@@ -364,13 +359,13 @@ boost::shared_ptr<ribi::TextCanvas> ribi::scc::StaircaseCard::ToTextCanvas() con
     {
       if (x % 2) continue;
       if (
-           (x+1 < width && canvas->GetChar(x+1,y) != ' ')
-        || (y+1 < height && canvas->GetChar(x,y+1) != ' ')
-        || (x-1 > 0 && canvas->GetChar(x-1,y) != ' ')
-        || (y-1 > 0 && canvas->GetChar(x,y-1) != ' ')
+           (x+1 < width && canvas.GetChar(x+1,y) != ' ')
+        || (y+1 < height && canvas.GetChar(x,y+1) != ' ')
+        || (x-1 > 0 && canvas.GetChar(x-1,y) != ' ')
+        || (y-1 > 0 && canvas.GetChar(x,y-1) != ' ')
       )
       {
-        canvas->PutChar(x,y,'+');
+        canvas.PutChar(x,y,'+');
       }
     }
   }
@@ -380,23 +375,23 @@ boost::shared_ptr<ribi::TextCanvas> ribi::scc::StaircaseCard::ToTextCanvas() con
   {
     for (int x=0; x!=width-2; ++x)
     {
-      if ( canvas->GetChar(x+0,y+1) == '-'
-        && canvas->GetChar(x+1,y+1) == '+'
-        && canvas->GetChar(x+2,y+1) == '-'
-        && canvas->GetChar(x+1,y+0) == ' '
-        && canvas->GetChar(x+1,y+2) == ' '
+      if ( canvas.GetChar(x+0,y+1) == '-'
+        && canvas.GetChar(x+1,y+1) == '+'
+        && canvas.GetChar(x+2,y+1) == '-'
+        && canvas.GetChar(x+1,y+0) == ' '
+        && canvas.GetChar(x+1,y+2) == ' '
       )
       {
-        canvas->PutChar(x+1,y+1,'-');
+        canvas.PutChar(x+1,y+1,'-');
       }
-      if ( canvas->GetChar(x+1,y+0) == '|'
-        && canvas->GetChar(x+1,y+1) == '+'
-        && canvas->GetChar(x+2,y+2) == '|'
-        && canvas->GetChar(x+0,y+1) == ' '
-        && canvas->GetChar(x+2,y+1) == ' '
+      if ( canvas.GetChar(x+1,y+0) == '|'
+        && canvas.GetChar(x+1,y+1) == '+'
+        && canvas.GetChar(x+2,y+2) == '|'
+        && canvas.GetChar(x+0,y+1) == ' '
+        && canvas.GetChar(x+2,y+1) == ' '
       )
       {
-        canvas->PutChar(x+1,y+1,'|');
+        canvas.PutChar(x+1,y+1,'|');
       }
     }
   }
@@ -404,20 +399,18 @@ boost::shared_ptr<ribi::TextCanvas> ribi::scc::StaircaseCard::ToTextCanvas() con
   return canvas;
 }
 
-boost::shared_ptr<ribi::TextCanvas> ribi::scc::StaircaseCard::ToTextCanvasCompact() const noexcept
+ribi::TextCanvas ribi::scc::StaircaseCard::ToTextCanvasCompact() const noexcept
 {
   const int height { static_cast<int>(m_v.size()) };
   assert(height > 0);
   const int width { static_cast<int>(m_v[0].GetMax()) };
   assert(width > 0);
 
-  boost::shared_ptr<TextCanvas> canvas {
-    new TextCanvas(width,height)
-  };
+  TextCanvas canvas{width,height};
 
   for (int y=0; y!=height; ++y)
   {
-    canvas->PutText(0,y,m_v[y].ToStr());
+    canvas.PutText(0,y,m_v[y].ToStr());
   }
   return canvas;
 }

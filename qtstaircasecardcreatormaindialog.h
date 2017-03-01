@@ -28,12 +28,17 @@ public:
   QtStaircaseCardCreatorMainDialog& operator=(const QtStaircaseCardCreatorMainDialog&) = delete;
   ~QtStaircaseCardCreatorMainDialog() noexcept;
 
+private slots:
+  void something_changed();
+
+  void on_box_n_rows_valueChanged(int arg1);
+
+  void on_box_n_cols_valueChanged(int arg1);
+
+  void on_box_seed_valueChanged(int arg1);
+
 private:
   Ui::QtStaircaseCardCreatorMainDialog *ui;
-
-  #ifndef NDEBUG
-  static void Test() noexcept;
-  #endif
 };
 
 } //~namespace scc

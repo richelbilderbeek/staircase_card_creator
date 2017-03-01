@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>539</width>
-    <height>509</height>
+    <width>850</width>
+    <height>703</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -35,10 +35,86 @@ QPushButton { font: 18 px  }
 QTabWidget { font: 12 px  }
 QLabel { font: 12px }
 QComboBox { font: 12px }
-QPlainTextEdit { font: 10px }
+QPlainTextEdit { font: 20px &quot;Courier&quot; }
 </string>
   </property>
-  <layout class="QGridLayout" name="gridLayout_2"/>
+  <layout class="QGridLayout" name="gridLayout_2">
+   <item row="0" column="1" colspan="2">
+    <widget class="QPlainTextEdit" name="text">
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+     <property name="plainText">
+      <string>ABCD
+ABCDABCD
+----
+||||
+</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0" rowspan="2">
+    <widget class="QWidget" name="widget" native="true">
+     <layout class="QFormLayout" name="formLayout">
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_rows">
+        <property name="text">
+         <string>rows</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QSpinBox" name="box_n_rows">
+        <property name="minimum">
+         <number>10</number>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_cols">
+        <property name="text">
+         <string>cols</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QSpinBox" name="box_n_cols">
+        <property name="minimum">
+         <number>8</number>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_seed">
+        <property name="text">
+         <string>RNG seed</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QSpinBox" name="box_seed">
+        <property name="minimum">
+         <number>-2000000000</number>
+        </property>
+        <property name="maximum">
+         <number>2000000000</number>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="label_grade">
+        <property name="text">
+         <string>Grade</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QLCDNumber" name="grade"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>

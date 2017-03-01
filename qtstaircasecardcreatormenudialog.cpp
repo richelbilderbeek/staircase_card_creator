@@ -3,9 +3,7 @@
 #include "qtstaircasecardcreatormenudialog.h"
 
 #include "about.h"
-#include "trace.h"
 #include "qtaboutdialog.h"
-#include "testtimer.h"
 #include "qtstaircasecardcreatormaindialog.h"
 #include "staircasecardcreatormenudialog.h"
 #include "ui_qtstaircasecardcreatormenudialog.h"
@@ -15,9 +13,6 @@ ribi::scc::QtStaircaseCardCreatorMenuDialog::QtStaircaseCardCreatorMenuDialog(QW
     QtHideAndShowDialog(parent),
     ui(new Ui::QtStaircaseCardCreatorMenuDialog)
 {
-  #ifndef NDEBUG
-  Test();
-  #endif
   ui->setupUi(this);
 }
 
@@ -47,19 +42,3 @@ void ribi::scc::QtStaircaseCardCreatorMenuDialog::on_button_start_clicked() noex
   QtStaircaseCardCreatorMainDialog d;
   ShowChild(&d);
 }
-
-#ifndef NDEBUG
-void ribi::scc::QtStaircaseCardCreatorMenuDialog::Test() noexcept
-{
-  {
-    static bool is_tested{false};
-    if (is_tested) return;
-    is_tested = true;
-  }
-  {
-    MenuDialog();
-    QtStaircaseCardCreatorMainDialog();
-  }
-  const TestTimer test_timer(__func__,__FILE__,1.0);
-}
-#endif

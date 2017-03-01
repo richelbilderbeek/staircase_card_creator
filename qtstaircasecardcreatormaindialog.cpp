@@ -10,11 +10,12 @@
 #include <sstream>
 #include <vector>
 
+#include "textcanvas.h"
+#include "staircasecard.h"
+
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Weffc++"
 #pragma GCC diagnostic ignored "-Wunused-local-typedefs"
-#include "testtimer.h"
-#include "trace.h"
 #include "ui_qtstaircasecardcreatormaindialog.h"
 #pragma GCC diagnostic pop
 
@@ -22,10 +23,8 @@ ribi::scc::QtStaircaseCardCreatorMainDialog::QtStaircaseCardCreatorMainDialog(QW
   : QtHideAndShowDialog(parent),
     ui(new Ui::QtStaircaseCardCreatorMainDialog)
 {
-  #ifndef NDEBUG
-  Test();
-  #endif
   ui->setupUi(this);
+  something_changed();
 }
 
 ribi::scc::QtStaircaseCardCreatorMainDialog::~QtStaircaseCardCreatorMainDialog() noexcept
@@ -33,14 +32,30 @@ ribi::scc::QtStaircaseCardCreatorMainDialog::~QtStaircaseCardCreatorMainDialog()
   delete ui;
 }
 
-#ifndef NDEBUG
-void ribi::scc::QtStaircaseCardCreatorMainDialog::Test() noexcept
+void ribi::scc::QtStaircaseCardCreatorMainDialog::something_changed()
 {
-  {
-    static bool is_tested{false};
-    if (is_tested) return;
-    is_tested = true;
-  }
-  const TestTimer test_timer(__func__,__FILE__,1.0);
+  const int n_cols{ui->box_n_cols->value()};
+  const int n_rows{ui->box_n_rows->value()};
+  StaircaseCard card{n_cols, n_rows};
+  card.ShuffleAesthetic();
+  ui->grade->display(card.RateAesthetics());
+  std::stringstream s;
+  s << card.ToTextCanvas();
+  ui->text->setPlainText(s.str().c_str());
 }
-#endif
+
+
+void ribi::scc::QtStaircaseCardCreatorMainDialog::on_box_n_rows_valueChanged(int)
+{
+  something_changed();
+}
+
+void ribi::scc::QtStaircaseCardCreatorMainDialog::on_box_n_cols_valueChanged(int)
+{
+  something_changed();
+}
+
+void ribi::scc::QtStaircaseCardCreatorMainDialog::on_box_seed_valueChanged(int)
+{
+  something_changed();
+}
