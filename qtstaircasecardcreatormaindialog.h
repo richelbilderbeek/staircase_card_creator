@@ -20,7 +20,7 @@ namespace scc {
 
 class QtStaircaseCardCreatorMainDialog : public QtHideAndShowDialog
 {
-  Q_OBJECT
+  Q_OBJECT //!OCLINT
 
 public:
   explicit QtStaircaseCardCreatorMainDialog(QWidget *parent = 0) noexcept;

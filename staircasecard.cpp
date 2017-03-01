@@ -38,7 +38,7 @@ ribi::scc::StaircaseCard::StaircaseCard(const int n_cols, const int n_rows)
 
 }
 
-std::vector<int> ribi::scc::StaircaseCard::ColumnToMap(const Column& c) noexcept
+std::vector<int> ribi::scc::ColumnToMap(const Column& c) noexcept
 {
   const int sz { c.GetMax() };
   std::vector<int> v(sz,0);
@@ -58,7 +58,8 @@ std::vector<int> ribi::scc::StaircaseCard::ColumnToMap(const Column& c) noexcept
   return v;
 }
 
-std::vector<ribi::scc::Column> ribi::scc::StaircaseCard::CreateGrid(const int n_cols, const int n_rows) noexcept
+std::vector<ribi::scc::Column> ribi::scc::CreateGrid(
+  const int n_cols, const int n_rows)
 {
   std::vector<Column> v;
   v.reserve(n_cols);
@@ -73,7 +74,8 @@ std::vector<ribi::scc::Column> ribi::scc::StaircaseCard::CreateGrid(const int n_
   return v;
 }
 
-boost::shared_ptr<ribi::scc::StaircaseCard> ribi::scc::StaircaseCard::GetTest(const int i) noexcept
+boost::shared_ptr<ribi::scc::StaircaseCard>
+ribi::scc::StaircaseCard::GetTest(const int i) noexcept
 {
   std::vector<Column> v;
 

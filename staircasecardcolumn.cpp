@@ -30,19 +30,20 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 #pragma GCC diagnostic pop
 
 ribi::scc::Column::Column(const int n_vertical, const int n_horizontal)
-  : m_v(Create(n_vertical,n_horizontal))
+  : m_v(CreateColumn(n_vertical,n_horizontal))
 {
 
 }
 
 ribi::scc::Column::Column(const std::vector<int>& v)
-  : m_v(Create(v))
+  : m_v(CreateColumn(v))
 {
   assert(v.size() % 2 == 0 && "A column must have as much vertical as horizontal pieces");
 
 }
 
-std::vector<ribi::scc::Orientation> ribi::scc::Column::Create(const int n_vertical, const int n_horizontal) noexcept
+std::vector<ribi::scc::Orientation> ribi::scc::CreateColumn(
+  const int n_vertical, const int n_horizontal)
 {
   std::vector<Orientation> v;
   v.reserve(n_vertical + n_horizontal);
@@ -52,7 +53,8 @@ std::vector<ribi::scc::Orientation> ribi::scc::Column::Create(const int n_vertic
   return v;
 }
 
-std::vector<ribi::scc::Orientation> ribi::scc::Column::Create(const std::vector<int>& v)
+std::vector<ribi::scc::Orientation> ribi::scc::CreateColumn(
+  const std::vector<int>& v)
 {
   assert(v.size() % 2 == 0 && "A column must have as much vertical as horizontal pieces");
   std::vector<Orientation> w;

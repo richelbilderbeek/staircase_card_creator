@@ -43,9 +43,10 @@ struct StaircaseCard
   private:
   std::vector<Column> m_v;
 
-  static std::vector<int> ColumnToMap(const Column& c) noexcept;
-  static std::vector<Column> CreateGrid(const int n_cols, const int n_rows) noexcept;
 };
+
+std::vector<int> ColumnToMap(const Column& c) noexcept;
+std::vector<Column> CreateGrid(const int n_cols, const int n_rows);
 
 std::ostream& operator<<(std::ostream& os, const StaircaseCard& c);
 
