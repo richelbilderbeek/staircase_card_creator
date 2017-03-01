@@ -1,4 +1,4 @@
-include(../RibiLibraries/Apfloat.pri)
+# include(../RibiLibraries/Apfloat.pri)
 include(../RibiClasses/CppAbout/CppAbout.pri)
 include(../RibiClasses/CppFileIo/CppFileIo.pri)
 include(../RibiClasses/CppHelp/CppHelp.pri)
@@ -29,8 +29,9 @@ QMAKE_CC = gcc-5
 QMAKE_CXXFLAGS += -std=c++14
 
 # High warning levels
-# apfloat goes bad with -Wshadow
-QMAKE_CXXFLAGS += -Wall -Wextra -Wnon-virtual-dtor -pedantic -Weffc++ -Werror
+# apfloat goes bad with
+# Qt goes bad with -Weffc++
+QMAKE_CXXFLAGS += -Wall -Wextra -Wnon-virtual-dtor -Wshadow -pedantic -Werror
 
 # Debug and release mode
 CONFIG += debug_and_release
