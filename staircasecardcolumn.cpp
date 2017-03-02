@@ -42,7 +42,7 @@ std::vector<ribi::scc::Orientation> ribi::scc::CreateColumn(
   for(const int i: v)
   {
     for (int j=0; j!=i; ++j) { w.push_back(orientation); }
-    switch (orientation)
+    switch (orientation) //!OCLINT no need for default value
     {
       case Orientation::vertical  : orientation = Orientation::horizontal; break;
       case Orientation::horizontal: orientation = Orientation::vertical  ; break;
