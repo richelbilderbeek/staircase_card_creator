@@ -48,11 +48,13 @@ std::vector<int> ribi::scc::ColumnToMap(const Column& c) noexcept
   {
     switch (c.GetOrientation(i))
     {
-      case Orientation::horizontal: v[i] = horizontal; --horizontal; break;
-      case Orientation::vertical  : v[i] = vertical  ; ++vertical  ; break;
+      case Orientation::horizontal:
+        v[i] = horizontal; --horizontal;
+        break;
       default:
-        assert(!"Should not get here");
-        throw std::logic_error("ribi::scc::StaircaseCard::ColumnToMap: invalid orientation");
+        assert(c.GetOrientation(i) == Orientation::vertical);
+        v[i] = vertical  ; ++vertical  ;
+      break;
     }
   }
   return v;
