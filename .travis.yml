@@ -21,11 +21,11 @@ script:
   - ./download_other_githubs
   # Console
   - qmake -qt=qt5 StaircaseCardCreatorConsole.pro
-  - make debug
+  - make --silent debug
   - ./StaircaseCardCreatorConsole
   # Desktop
   - qmake -qt=qt5 StaircaseCardCreatorDesktop.pro
-  - make debug
+  - make --silent debug
   - ./StaircaseCardCreatorDesktop &
   - sleep 10
   # Get code coverage
