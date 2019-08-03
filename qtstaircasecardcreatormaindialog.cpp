@@ -15,7 +15,7 @@
 
 #pragma GCC diagnostic push
 
-#pragma GCC diagnostic ignored "-Wunused-local-typedefs"
+
 #include "ui_qtstaircasecardcreatormaindialog.h"
 #pragma GCC diagnostic pop
 
