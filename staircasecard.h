@@ -25,7 +25,7 @@ struct StaircaseCard
   StaircaseCard(const int n_cols, const int n_rows);
   StaircaseCard(const std::vector<Column>& v) noexcept : m_v{v} {}
 
-  static boost::shared_ptr<StaircaseCard> GetTest(const int i) noexcept;
+  static boost::shared_ptr<StaircaseCard> GetTest(const int i);
 
   ///Give a measurement of aesthetics
   int RateAesthetics() const noexcept;
