@@ -1,4 +1,4 @@
-#pragma GCC diagnostic push
+
 
 
 
@@ -13,7 +13,7 @@
 
 #include "staircasecardcreatormenudialog.h"
 #include "fileio.h"
-#pragma GCC diagnostic pop
+
 
 int main(int argc, char* argv[])
 {

@@ -1,4 +1,4 @@
-#pragma GCC diagnostic push
+
 
 #include "qtstaircasecardcreatormenudialog.h"
 
@@ -7,7 +7,7 @@
 #include "qtstaircasecardcreatormaindialog.h"
 #include "staircasecardcreatormenudialog.h"
 #include "ui_qtstaircasecardcreatormenudialog.h"
-#pragma GCC diagnostic pop
+
 
 ribi::scc::QtStaircaseCardCreatorMenuDialog::QtStaircaseCardCreatorMenuDialog(QWidget *parent) noexcept :
     QtHideAndShowDialog(parent),

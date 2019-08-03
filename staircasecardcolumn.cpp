@@ -2,12 +2,12 @@
 
 #include <cassert>
 #include <algorithm>
-#pragma GCC diagnostic push
 
 
 
 
-#pragma GCC diagnostic pop
+
+
 
 ribi::scc::Column::Column(const int n_vertical, const int n_horizontal)
   : m_v(CreateColumn(n_vertical,n_horizontal))

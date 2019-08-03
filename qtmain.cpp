@@ -1,11 +1,11 @@
-#pragma GCC diagnostic push
+
 
 
 
 #include <QApplication>
 
 #include "qtstaircasecardcreatormenudialog.h"
-#pragma GCC diagnostic pop
+
 
 int main(int argc, char *argv[])
 {

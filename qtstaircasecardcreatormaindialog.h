@@ -4,10 +4,10 @@
 //#include <string>
 //#include <vector>
 
-#pragma GCC diagnostic push
+
 
 #include "qthideandshowdialog.h"
-#pragma GCC diagnostic pop
+
 
 struct QPlainTextEdit;
 

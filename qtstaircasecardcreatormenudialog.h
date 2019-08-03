@@ -1,10 +1,10 @@
 #ifndef QTSTAIRCASECARDCREATORMENUDIALOG_H
 #define QTSTAIRCASECARDCREATORMENUDIALOG_H
 
-#pragma GCC diagnostic push
+
 
 #include "qthideandshowdialog.h"
-#pragma GCC diagnostic pop
+
 
 namespace Ui {
   class QtStaircaseCardCreatorMenuDialog;

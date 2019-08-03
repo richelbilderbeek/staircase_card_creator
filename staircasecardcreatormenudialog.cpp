@@ -1,4 +1,4 @@
-#pragma GCC diagnostic push
+
 
 
 
@@ -18,7 +18,7 @@
 #include "fileio.h"
 #include "staircasecard.h"
 #include "textcanvas.h"
-#pragma GCC diagnostic pop
+
 
 ribi::scc::MenuDialog::MenuDialog()
 {

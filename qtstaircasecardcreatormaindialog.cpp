@@ -13,11 +13,11 @@
 #include "textcanvas.h"
 #include "staircasecard.h"
 
-#pragma GCC diagnostic push
+
 
 
 #include "ui_qtstaircasecardcreatormaindialog.h"
-#pragma GCC diagnostic pop
+
 
 ribi::scc::QtStaircaseCardCreatorMainDialog::QtStaircaseCardCreatorMainDialog(QWidget *parent) noexcept
   : QtHideAndShowDialog(parent),

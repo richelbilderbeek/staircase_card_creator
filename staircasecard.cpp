@@ -20,7 +20,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 //---------------------------------------------------------------------------
 #include "staircasecard.h"
 
-#pragma GCC diagnostic push
+
 
 
 
@@ -30,7 +30,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 #include <QImage>
 
 #include "textcanvas.h"
-#pragma GCC diagnostic pop
+
 
 ribi::scc::StaircaseCard::StaircaseCard(const int n_cols, const int n_rows)
   : m_v(CreateGrid(n_cols,n_rows))
