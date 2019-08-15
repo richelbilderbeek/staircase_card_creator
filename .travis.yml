@@ -29,8 +29,8 @@ script:
   - ./StaircaseCardCreatorDesktop &
   - sleep 10
   # Get code coverage
-  - ./get_code_cov
-  - codecov
+  - ./get_code_cov >/dev/null
+  - codecov >/dev/null
   # Call OCLint
   - ./do_oclint
 
