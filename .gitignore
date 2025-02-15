@@ -34,3 +34,4 @@ oclint.log
 Makefile
 Makefile.Debug
 Makefile.Release
+ui*
