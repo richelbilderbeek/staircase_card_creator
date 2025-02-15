@@ -24,6 +24,10 @@ jobs:
       - name: Install Qt
         uses: jurplel/install-qt-action@v4
 
+      - name: Download dependencies
+        run: ./download_other_githubs.sh
+
+
       - name: Build
         run: qmake StaircaseCardCreatorConsole.pro
 
