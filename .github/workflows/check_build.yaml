@@ -28,8 +28,14 @@ jobs:
         run: ./download_other_githubs.sh
 
 
-      - name: Build
+      - name: qmake
         run: qmake StaircaseCardCreatorConsole.pro
+
+      - name: make
+        run: make
+
+      - name: See results
+        run: find .
 
       - name: Check if file was created
         run: |
@@ -39,7 +45,3 @@ jobs:
             echo "File does not exist"
             exit 1
           fi
-
-      - name: Did the last step fail?
-        if: ${{ failure() }}
-        run: echo "Last step failed, so file must have maybe been created"
