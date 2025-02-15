@@ -1,13 +1,8 @@
 #include "staircasecardcolumn.h"
 
-#include <cassert>
 #include <algorithm>
-
-
-
-
-
-
+#include <cassert>
+#include <random>
 
 ribi::scc::Column::Column(const int n_vertical, const int n_horizontal)
   : m_v(CreateColumn(n_vertical,n_horizontal))
@@ -61,7 +56,8 @@ ribi::scc::Orientation ribi::scc::Column::GetOrientation(const int row) const no
 
 void ribi::scc::Column::Shuffle() noexcept
 {
-  std::random_shuffle(m_v.begin() + 1,m_v.end() - 1);
+  auto rng = std::default_random_engine {};
+  std::shuffle(m_v.begin() + 1,m_v.end() - 1, rng);
 }
 
 void ribi::scc::Column::Swap(const int a, const int b) noexcept
