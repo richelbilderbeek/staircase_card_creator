@@ -1,0 +1,28 @@
+# Check that the executable can be built
+name: Check build
+
+on:
+  push:
+    paths:
+      - .github/workflows/check_build.yaml
+      - '**.pro'
+      - '**.pri'
+      - '**.cpp'
+      - '**.h'
+  pull_request:
+  schedule:
+  - cron: "0 0 21 * *"
+
+jobs:
+  check-build:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v4
+
+      - name: Build
+        run: qmake StaircaseCardCreatorConsole.pro
