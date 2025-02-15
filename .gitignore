@@ -35,3 +35,4 @@ Makefile
 Makefile.Debug
 Makefile.Release
 ui*
+build/
