@@ -27,16 +27,15 @@ jobs:
       - name: Build
         run: qmake StaircaseCardCreatorConsole.pro
 
-
       - name: Check if file was created
         run: |
-             if [ -f staircase_card_creator_console ]; then
-                echo "File exists. Yay!"
-            else
-                echo "File does not exist"
-                exit 1
-            fi
+          if [ -f staircase_card_creator_console ]; then
+            echo "File exists. Yay!"
+          else
+            echo "File does not exist"
+            exit 1
+          fi
+
       - name: Did the last step fail?
         if: ${{ failure() }}
         run: echo "Last step failed, so file must have maybe been created"
-
