@@ -27,9 +27,15 @@ jobs:
       - name: Download dependencies
         run: ./download_other_githubs.sh
 
-
       - name: qmake
         run: qmake StaircaseCardCreatorConsole.pro
+
+      - name: Install boost
+        uses: MarkusJx/install-boost@v2
+        with:
+          # A list of supported versions can be found here:
+          # https://github.com/MarkusJx/prebuilt-boost/blob/main/versions-manifest.json
+          boost_version: 1.73.0
 
       - name: make
         run: make
