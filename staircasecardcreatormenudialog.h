@@ -24,24 +24,23 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 #include <string>
 #include <vector>
 
-#include "menudialog.h"
+//#include "menudialog.h"
 
 namespace ribi {
 namespace scc {
 
 ///GUI independent staircasecardcreator menu dialog
-struct MenuDialog final : public ::ribi::MenuDialog
+struct MenuDialog
 {
   MenuDialog();
-  ~MenuDialog() noexcept {}
-  About GetAbout() const noexcept override;
-  Help GetHelp() const noexcept override;
-  std::string GetVersion() const noexcept override;
+  //About GetAbout() const noexcept;
+  //Help GetHelp() const noexcept;
+  std::string GetVersion() const noexcept;
 
-  std::vector<std::string> GetVersionHistory() const noexcept override;
+  std::vector<std::string> GetVersionHistory() const noexcept;
 
   private:
-  int ExecuteSpecific(const std::vector<std::string>& argv) noexcept override;
+  int ExecuteSpecific(const std::vector<std::string>& argv) noexcept;
 };
 
 } //~namespace scc

@@ -37,6 +37,7 @@ int ribi::scc::MenuDialog::ExecuteSpecific(const std::vector<std::string>& /* ar
   return 0;
 }
 
+/*
 ribi::About ribi::scc::MenuDialog::GetAbout() const noexcept
 {
   ribi::About a {
@@ -53,7 +54,6 @@ ribi::About ribi::scc::MenuDialog::GetAbout() const noexcept
   return a;
 }
 
-
 ribi::Help ribi::scc::MenuDialog::GetHelp() const noexcept
 {
   return ribi::Help(
@@ -65,6 +65,7 @@ ribi::Help ribi::scc::MenuDialog::GetHelp() const noexcept
     }
   );
 }
+*/
 
 std::string ribi::scc::MenuDialog::GetVersion() const noexcept
 {
