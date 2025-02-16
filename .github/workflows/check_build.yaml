@@ -39,13 +39,13 @@ jobs:
           boost_install_dir: /home/runner/boost
 
       - name: scout
-        run: cd ~; ll; cd -
+        run: cd ~; ls; cd -
 
       - name: scout
-        run: cd ~/runner; ll; cd -
+        run: cd ~/runner; ls; cd -
 
       - name: scout
-        run: cd ~/runner/boost; ll; cd -
+        run: cd ~/runner/boost; ls; cd -
 
       - name: make
         run: make
