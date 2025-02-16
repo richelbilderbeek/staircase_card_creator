@@ -41,11 +41,11 @@ jobs:
       - name: scout
         run: cd ~; ls; cd -
 
-      - name: scout
-        run: cd ~/runner; ls; cd -
+      #- name: scout
+      #  run: cd ~/runner; ls; cd -
 
-      - name: scout
-        run: cd ~/runner/boost; ls; cd -
+      #- name: scout
+      #  run: cd ~/runner/boost; ls; cd -
 
       - name: make
         run: make
