@@ -10,7 +10,7 @@ include(StaircaseCardCreatorConsole.pri)
 SOURCES += main.cpp
 
 # Needed for Boost
-INCLUDES += /usr/include/
+INCLUDEPATH += /usr/include/
 
 CONFIG += c++17
 QMAKE_CXXFLAGS += -std=c++17
