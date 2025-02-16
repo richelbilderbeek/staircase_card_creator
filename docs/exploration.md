@@ -2,8 +2,9 @@
 
 
 Vizualize
-- https://wktmap.com/: Can only do 1 object
-- https://arthur-e.github.io/Wicket/sandbox-gmaps3.html
+
+- <https://wktmap.com/>: Can only do 1 object
+- <https://arthur-e.github.io/Wicket/sandbox-gmaps3.html>
 
 Cannot show two lines:
 
@@ -12,16 +13,17 @@ LINESTRING (0 0, 0 1)
 LINESTRING (10 10, 10 11)
 ```
 
-Use converter, https://anyconv.com/wkt-converter/ ?
+Use converter, <https://anyconv.com/wkt-converter/> ?
 
 Nah, use Inkscape
 
 Hard to draw straight and vertical lines.
 
 It does seem my tool is best to create SVGs from WKT
-  - https://github.com/richelbilderbeek/wkt_to_svg_converter
-  - https://github.com/Notgnoshi/generative?tab=readme-ov-file#wkt2svg
-  - Rpackages
+
+- <https://github.com/richelbilderbeek/wkt_to_svg_converter>
+- <https://github.com/Notgnoshi/generative?tab=readme-ov-file#wkt2svg>
+- Rpackages
 
 
 ```R
@@ -52,7 +54,4 @@ CAD program?
 - LibreCAD: cannot export to regular SVG
 - OpenSCAD: cannot export to regular SVG
 - FreeCAD can!
-
-
-
 
