@@ -36,7 +36,7 @@ Here are the steps to manually create a staircase card.
   to `ff0000ff` (primary red)
 - (optional) Save as SVG [4.svg](4.svg)
 
-### 5. Import in Lightburn
+### 5. Import in LightBurn
 
 - In LightBurn, open SVG [4.svg](4.svg)
 - Save as ([5.lbrn](5.lbrn) or) [5.lbrn2](5.lbrn2)

@@ -30,3 +30,9 @@ SVGs
 wkt
 WKT
 wktmap
+Autodesk
+DXF
+dxf
+FCStd
+lbrn
+LightBurn
