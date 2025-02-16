@@ -22,7 +22,7 @@ include(StaircaseCardCreatorDesktop.pri)
 SOURCES += qtmain.cpp
 
 # Needed for Boost
-INCLUDEPATH += /home/runner/boost
+INCLUDEPATH += /home/boost
 
 CONFIG += c++17
 QMAKE_CXXFLAGS += -std=c++17
