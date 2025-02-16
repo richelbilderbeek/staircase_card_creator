@@ -38,6 +38,9 @@ jobs:
           boost_version: 1.73.0
           boost_install_dir: /home/runner/boost
 
+      - name: scout
+        run: cd home/runner/boost; ll; cd -
+
       - name: make
         run: make
 
