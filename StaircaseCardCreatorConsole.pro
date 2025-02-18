@@ -17,6 +17,8 @@ INCLUDEPATH += /home/runner/work
 INCLUDEPATH += /home/runner/work/staircase_card_creator
 INCLUDEPATH += ../
 INCLUDEPATH += ../boost
+INCLUDEPATH += /home/runner/work/staircase_card_creator/staircase_card_creator/boost
+INCLUDEPATH += /home/runner/work/staircase_card_creator/staircase_card_creator/boost/boost
 
 CONFIG += c++17
 QMAKE_CXXFLAGS += -std=c++17
