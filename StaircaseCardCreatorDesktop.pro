@@ -23,6 +23,9 @@ SOURCES += qtmain.cpp
 
 # Needed for Boost
 INCLUDEPATH += /home
+INCLUDEPATH += /home/runner
+INCLUDEPATH += /home/runner/work
+INCLUDEPATH += /home/runner/work/staircase_card_creator
 
 CONFIG += c++17
 QMAKE_CXXFLAGS += -std=c++17
