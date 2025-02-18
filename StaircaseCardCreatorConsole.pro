@@ -25,7 +25,9 @@ QMAKE_CXXFLAGS += -std=c++17
 
 # High warning levels
 # Qt goes bad with -Weffc++
-QMAKE_CXXFLAGS += -Wall -Wextra -Wshadow -Wnon-virtual-dtor -pedantic -Werror
+CONFIG(debug, debug|release) {
+  QMAKE_CXXFLAGS += -Wall -Wextra -Wnon-virtual-dtor -Wshadow -pedantic -Werror
+}
 
 # Debug and release mode
 CONFIG += debug_and_release

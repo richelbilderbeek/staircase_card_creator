@@ -22,15 +22,15 @@ include(StaircaseCardCreatorDesktop.pri)
 SOURCES += qtmain.cpp
 
 # Needed for Boost
-INCLUDEPATH += /home
-INCLUDEPATH += /home/runner
-INCLUDEPATH += /home/runner/boost
-INCLUDEPATH += /home/runner/work
-INCLUDEPATH += /home/runner/work/staircase_card_creator
-INCLUDEPATH += ../
-INCLUDEPATH += ../boost
-INCLUDEPATH += ../boost/boost
-INCLUDEPATH += ../boost
+#INCLUDEPATH += /home
+#INCLUDEPATH += /home/runner
+#INCLUDEPATH += /home/runner/boost
+#INCLUDEPATH += /home/runner/work
+#INCLUDEPATH += /home/runner/work/staircase_card_creator
+#INCLUDEPATH += ../
+#INCLUDEPATH += ../boost
+#INCLUDEPATH += ../boost/boost
+#INCLUDEPATH += ../boost
 INCLUDEPATH += /home/runner/work/staircase_card_creator/staircase_card_creator/boost
 INCLUDEPATH += /home/runner/work/staircase_card_creator/staircase_card_creator/boost/boost
 
@@ -40,7 +40,9 @@ QMAKE_CXXFLAGS += -std=c++17
 # High warning levels
 # apfloat goes bad with
 # Qt goes bad with -Weffc++
-QMAKE_CXXFLAGS += -Wall -Wextra -Wnon-virtual-dtor -Wshadow -pedantic -Werror
+CONFIG(debug, debug|release) {
+  QMAKE_CXXFLAGS += -Wall -Wextra -Wnon-virtual-dtor -Wshadow -pedantic -Werror
+}
 
 # Debug and release mode
 CONFIG += debug_and_release
