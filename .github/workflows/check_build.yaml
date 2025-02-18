@@ -38,7 +38,7 @@ jobs:
           boost_version: 1.87.0
 
       - name: scout
-        run: cd ~; ls; cd -
+        run: cd /home/runner/work/staircase_card_creator/staircase_card_creator/boost/boost; ls; cd -
 
       #- name: scout
       #  run: cd ~/runner; ls; cd -
