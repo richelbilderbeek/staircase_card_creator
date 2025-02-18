@@ -12,6 +12,7 @@ SOURCES += main.cpp
 # Needed for Boost
 INCLUDEPATH += /home
 INCLUDEPATH += /home/runner
+INCLUDEPATH += /home/runner/boost
 INCLUDEPATH += /home/runner/work
 INCLUDEPATH += /home/runner/work/staircase_card_creator
 
