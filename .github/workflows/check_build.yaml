@@ -38,17 +38,23 @@ jobs:
       #    # https://github.com/MarkusJx/prebuilt-boost/blob/main/versions-manifest.json
       #    boost_version: 1.87.0
 
-      #- name: scout
-      #  run: cd /home/runner/work/staircase_card_creator/staircase_card_creator/boost/boost; ls; cd -
+      - name: make
+        run: make
 
-      #- name: scout
-      #  run: cd /home/runner/work/staircase_card_creator/staircase_card_creator/boost/boost/boost; ls; cd -
+      - name: See results
+        run: find .
 
-      #- name: scout
-      #  run: cd ~/runner; ls; cd -
+      - name: Check if file was created
+        run: |
+          if [ -f StaircaseCardCreatorConsole ]; then
+            echo "File exists. Yay!"
+          else
+            echo "File does not exist"
+            exit 1
+          fi
 
-      #- name: scout
-      #  run: cd ~/runner/boost; ls; cd -
+      - name: qmake
+        run: qmake StaircaseCardCreatorDesktop.pro
 
       - name: make
         run: make
@@ -58,7 +64,7 @@ jobs:
 
       - name: Check if file was created
         run: |
-          if [ -f staircase_card_creator_console ]; then
+          if [ -f StaircaseCardCreatorDesktop ]; then
             echo "File exists. Yay!"
           else
             echo "File does not exist"
