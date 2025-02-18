@@ -44,5 +44,3 @@ to its x axis.
 
 ![Forward cuboid](forward_cuboid.png)
 
-
-
