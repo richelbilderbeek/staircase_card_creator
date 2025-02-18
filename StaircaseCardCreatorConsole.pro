@@ -10,13 +10,6 @@ include(StaircaseCardCreatorConsole.pri)
 SOURCES += main.cpp
 
 # Needed for Boost
-INCLUDEPATH += /home
-INCLUDEPATH += /home/runner
-INCLUDEPATH += /home/runner/boost
-INCLUDEPATH += /home/runner/work
-INCLUDEPATH += /home/runner/work/staircase_card_creator
-INCLUDEPATH += ../
-INCLUDEPATH += ../boost
 INCLUDEPATH += /home/runner/work/staircase_card_creator/staircase_card_creator/boost
 INCLUDEPATH += /home/runner/work/staircase_card_creator/staircase_card_creator/boost/boost
 
