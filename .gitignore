@@ -36,3 +36,5 @@ Makefile.Debug
 Makefile.Release
 ui*
 build/
+coverage/
+build_*/

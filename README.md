@@ -1,5 +1,7 @@
 # StaircaseCardCreator
 
+[![Codecov](https://codecov.io/gh/richelbilderbeek/staircase_card_creator/branch/main/graph/badge.svg)](https://codecov.io/gh/richelbilderbeek/staircase_card_creator)
+
 <!-- markdownlint-disable MD013 --><!-- Badges cannot be split up over lines, hence will break 80 characters per line -->
 
 [![Check build](https://github.com/richelbilderbeek/staircase_card_creator/actions/workflows/check_build.yaml/badge.svg?branch=main)](https://github.com/richelbilderbeek/staircase_card_creator/actions/workflows/check_build.yaml)
