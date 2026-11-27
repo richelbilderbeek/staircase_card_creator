@@ -24,7 +24,17 @@ ribi::scc::QtStaircaseCardCreatorMenuDialog::~QtStaircaseCardCreatorMenuDialog()
 
 void ribi::scc::QtStaircaseCardCreatorMenuDialog::on_button_about_clicked() noexcept
 {
-  ::ribi::About a = ::ribi::scc::MenuDialog().GetAbout();
+  const ::ribi::scc::MenuDialog menu;
+  ::ribi::About a {
+    "Richel Bilderbeek",
+    "StaircaseCardCreator",
+    "tool to generate staircase cards",
+    "the 6th of March 2014",
+    "2010-2015",
+    "http://www.richelbilderbeek.nl/ToolStaircaseCardCreator.htm",
+    menu.GetVersion(),
+    menu.GetVersionHistory()
+  };
   a.AddLibrary("QtHideAndShowDialog version: " + QtHideAndShowDialog::GetVersion());
   ::ribi::QtAboutDialog d(a);
   d.setWindowIcon(this->windowIcon());
